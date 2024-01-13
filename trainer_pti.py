@@ -335,7 +335,7 @@ def main(
             loss = (model_pred - noise).pow(2) * mask
             loss = loss.mean()
 
-            loss.requires_grad = True
+            # loss.requires_grad = True
             loss.backward()
             optimizer.step()
             lr_scheduler.step()
