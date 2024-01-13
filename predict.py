@@ -15,6 +15,9 @@ from dataset_and_utils import TokenEmbeddingsHandler
 from train import train
 
 class Predictor(BasePredictor):
+    def setup(self):
+        """Load the model into memory to make running multiple predictions efficient"""
+
     @torch.inference_mode()
     def predict(
         self,
@@ -141,5 +144,5 @@ class Predictor(BasePredictor):
             checkpointing_steps,
             input_images_filetype,
         )
-        
+
         return training_result.weights
