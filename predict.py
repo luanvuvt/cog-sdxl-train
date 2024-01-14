@@ -12,7 +12,7 @@ from cog import BasePredictor, Input, Path
 
 from dataset_and_utils import TokenEmbeddingsHandler
 
-from train import train
+from sdxl_train import train
 
 class Predictor(BasePredictor):
     def setup(self):
